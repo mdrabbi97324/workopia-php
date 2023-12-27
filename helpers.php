@@ -8,7 +8,8 @@
  * @return string
  */
 
-function basePath($path = "") {
+function basePath($path = "")
+{
     return __DIR__ . "/" . $path;
 }
 
@@ -21,14 +22,16 @@ function basePath($path = "") {
  */
 
 
- function loadView ($name) {
+function loadView($name)
+{
     $viewPath = basePath("views/{$name}.view.php");
+
     if (file_exists($viewPath)) {
         require $viewPath;
     } else {
         echo "View '{$name} not found!'";
     }
- }
+}
 
 
 /**
@@ -39,12 +42,44 @@ function basePath($path = "") {
  */
 
 
- function loadPartial ($name) {
+function loadPartial($name)
+{
     $partialPath = basePath("views/partials/{$name}.php");
 
-    if(file_exists($partialPath)) {
+    if (file_exists($partialPath)) {
         require $partialPath;
     } else {
         echo "Partial '{$name} is not found'";
     }
- }
+}
+
+
+/**
+ * Inspect a value (s)
+ * 
+ * @param mixed $value
+ *@return void
+ */
+
+function inspect($value)
+{
+echo "<pre>";
+var_dump($value);
+echo "</pre>";
+}
+
+
+/**
+ * Inspect a value (s)
+ * 
+ *@param mixed $value
+ *@return void
+ */
+
+function inspectAndDie($value)
+{
+echo "<pre>";
+var_dump($value);
+echo "</pre>";
+die();  
+}
