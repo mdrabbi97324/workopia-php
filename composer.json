@@ -1,0 +1,17 @@
+{
+    "name": "mdrabbi97324/workopia-php",
+    "description": "Job listing application",
+    "authors" : [
+        {
+            "name" : "Golam Rabbi",
+            "email" : "example@email.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Framework\\" : "Framework/",
+            "App\\" : "App/"
+        }
+    }
+}
